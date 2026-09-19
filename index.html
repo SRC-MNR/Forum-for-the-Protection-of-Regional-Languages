@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ಅಭಿನಂದನಾ ಪತ್ರ — ದೇಶೀಯ ಭಾಷಾ ಹಿತರಕ್ಷಣಾ ವೇದಿಕೆ (ರಿ) ಬೆಂಗಳೂರು</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Kannada:wght@400;500;600;700&family=Baloo+Tamma+2:wght@500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<style>
+  :root{
+    --paper:#FDF8EC;
+    --paper-2:#F6ECD6;
+    --ink:#2A1A10;
+    --maroon:#7C1220;
+    --maroon-dk:#5A0B16;
+    --gold:#B8862B;
+    --gold-lt:#E3C169;
+    --leaf:#35553F;
+    --page-bg:#221A15;
+    --panel:#FFFFFF;
+    --panel-ink:#2A1A10;
+    --panel-line:#D8CDBA;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --page-bg:#15100D;
+      --panel:#221A15;
+      --panel-ink:#F3E9D8;
+      --panel-line:#463628;
+    }
+  }
+  :root[data-theme="dark"]{
+    --page-bg:#15100D;
+    --panel:#221A15;
+    --panel-ink:#F3E9D8;
+    --panel-line:#463628;
+  }
+
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--page-bg);
+    font-family:"Noto Serif Kannada",serif;
+    color:var(--panel-ink);
+    padding:18px 12px 48px;
+  }
+
+  .panel{
+    max-width:820px;margin:0 auto 18px;background:var(--panel);
+    border:1px solid var(--panel-line);border-radius:10px;padding:14px 16px;
+    display:flex;flex-wrap:wrap;gap:10px;align-items:center;
+  }
+  .panel p{width:100%;margin:0 0 2px;font-size:13.5px;line-height:1.7;opacity:.85}
+  .btn{
+    font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;
+    padding:9px 15px;border-radius:7px;border:1px solid var(--maroon);
+    background:var(--maroon);color:#FFF6E4;
+  }
+  .btn:hover{filter:brightness(1.08)}
+  .btn:focus-visible{outline:3px solid #6C9BD2;outline-offset:2px}
+  .note{width:100%;font-size:12.5px;opacity:.7;margin:2px 0 0}
+
+  .stage{display:flex;justify-content:center;max-width:100%}
+  .sheet{
+    width:800px;min-height:1132px;position:relative;padding:34px;
+    background:radial-gradient(120% 90% at 50% 0%, #FFFDF6 0%, var(--paper) 45%, var(--paper-2) 100%);
+    color:var(--ink);
+    box-shadow:0 22px 60px rgba(0,0,0,.45);
+    transform-origin:top center;
+  }
+  .frame{position:absolute;inset:14px;border:3px solid var(--maroon)}
+  .frame::after{content:"";position:absolute;inset:7px;border:1px solid var(--gold)}
+  .frame::before{content:"";position:absolute;inset:13px;border:6px double var(--gold-lt);opacity:.75}
+  .corner{position:absolute;width:74px;height:74px;color:var(--gold);z-index:2}
+  .corner.tl{top:22px;left:22px}
+  .corner.tr{top:22px;right:22px;transform:scaleX(-1)}
+  .corner.bl{bottom:22px;left:22px;transform:scaleY(-1)}
+  .corner.br{bottom:22px;right:22px;transform:scale(-1,-1)}
+
+  .inner{position:relative;z-index:3;padding:44px 40px 34px}
+
+  .masthead{display:flex;align-items:flex-start;gap:20px}
+  .mast-text{flex:1 1 auto;min-width:0}
+  .org{
+    font-family:"Baloo Tamma 2","Noto Serif Kannada",serif;font-weight:800;
+    font-size:33px;line-height:1.3;color:var(--maroon-dk);margin:0;
+  }
+  .org small{display:block;font-size:19px;font-weight:600;color:var(--leaf);margin-top:6px;letter-spacing:.4px}
+  .logo-slot{
+    flex:0 0 auto;width:150px;height:150px;border:3px solid var(--gold);
+    border-radius:50%;display:flex;align-items:center;justify-content:center;
+    overflow:hidden;background:#FFFCF4;text-align:center;
+    box-shadow:0 0 0 4px var(--paper), 0 2px 8px rgba(0,0,0,.18);
+  }
+  .logo-slot img{width:100%;height:100%;object-fit:contain;display:block}
+  .logo-slot span{font-size:12.5px;line-height:1.5;color:#9A8B72;padding:8px}
+
+  .rule{margin:22px 0 0;height:16px;position:relative}
+  .rule::before{content:"";position:absolute;left:0;right:0;top:7px;height:2px;
+    background:linear-gradient(90deg,transparent,var(--gold) 12%,var(--maroon) 50%,var(--gold) 88%,transparent)}
+  .rule svg{position:absolute;left:50%;top:-5px;transform:translateX(-50%);
+    background:var(--paper);padding:0 10px;color:var(--maroon)}
+
+  .title{
+    text-align:center;margin:28px 0 8px;font-family:"Baloo Tamma 2","Noto Serif Kannada",serif;
+    font-weight:800;font-size:46px;color:var(--maroon);letter-spacing:1px;
+    text-shadow:0 1px 0 rgba(255,255,255,.85);
+  }
+  .title-under{width:190px;height:3px;margin:0 auto;background:var(--gold);position:relative}
+  .title-under::before,.title-under::after{content:"";position:absolute;top:-2px;width:7px;height:7px;background:var(--maroon);transform:rotate(45deg)}
+  .title-under::before{left:-13px}
+  .title-under::after{right:-13px}
+
+  .datebar{margin:26px 0 0;text-align:right;font-size:17px;color:var(--leaf);font-weight:600}
+  .datebar [contenteditable]{border-bottom:1px dotted var(--gold);padding:0 4px}
+
+  .salute{margin:24px 0 0;font-size:19.5px}
+  .name-line{display:inline-block;min-width:230px;border-bottom:2px dotted var(--maroon);
+    padding:2px 10px;font-weight:700;font-size:22px;color:var(--maroon-dk);text-align:center}
+  .name-line:empty::before{content:attr(data-placeholder);color:#B6A68C;font-weight:500}
+  .name-line:focus{background:#FFF3D6;border-radius:4px 4px 0 0}
+
+  .desig-line{display:inline-block;min-width:170px;border-bottom:2px dotted var(--leaf);
+    padding:2px 8px;font-weight:600;font-size:18px;color:var(--leaf);text-align:center}
+  .desig-line:empty::before{content:attr(data-placeholder);color:#B6A68C;font-weight:500}
+  .desig-line:focus{background:#FFF3D6;border-radius:4px 4px 0 0}
+
+  .school-line{display:inline-block;min-width:230px;border-bottom:2px dotted var(--maroon);
+    padding:2px 8px;font-weight:600;font-size:18px;color:var(--maroon-dk);text-align:center}
+  .school-line:empty::before{content:attr(data-placeholder);color:#B6A68C;font-weight:500}
+  .school-line:focus{background:#FFF3D6;border-radius:4px 4px 0 0}
+
+  .body-text{font-size:19px;line-height:2.05;text-align:justify;margin:20px 0 0;text-indent:34px}
+  .body-text b{color:var(--maroon-dk);font-weight:700}
+
+  .wish{
+    margin:32px auto 0;max-width:560px;text-align:center;font-size:20px;color:var(--leaf);
+    font-weight:600;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);padding:12px 0;
+  }
+
+  .sign{margin:48px 0 0;text-align:right;font-size:18px;line-height:1.9}
+  .sign .from{font-weight:700;color:var(--maroon-dk);font-size:19px}
+  .sign .who{font-size:17px}
+
+  .footstrip{position:absolute;left:34px;right:34px;bottom:44px;text-align:center;
+    font-size:15px;color:#8A7A61;letter-spacing:.5px}
+
+  .capturing .name-line:focus{background:transparent}
+  .capturing [contenteditable]{outline:none !important}
+
+  @media print{
+    body{background:#fff;padding:0}
+    .panel{display:none}
+    .sheet{box-shadow:none;margin:0}
+  }
+</style>
+</head>
+<body>
+
+<div class="panel" id="panel">
+  <p>ಹೆಸರು, ಪದನಾಮ, ಶಾಲೆ ಮತ್ತು ದಿನಾಂಕದ ಜಾಗದ ಮೇಲೆ ಕ್ಲಿಕ್ ಮಾಡಿ ನೇರವಾಗಿ ಟೈಪ್ ಮಾಡಿ.</p>
+  <button class="btn" id="dlPng">PNG ಡೌನ್‌ಲೋಡ್</button>
+  <button class="btn" id="dlPdf">PDF ಡೌನ್‌ಲೋಡ್</button>
+  <p class="note" id="msg"></p>
+</div>
+
+<div class="stage" id="stage">
+<div class="sheet" id="sheet">
+  <div class="frame"></div>
+
+  <svg class="corner tl" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+    <path d="M4 96 V30 C4 16 16 4 30 4 H96" stroke="currentColor" stroke-width="2.5"/>
+    <path d="M14 96 V34 C14 23 23 14 34 14 H96" stroke="currentColor" stroke-width="1"/>
+    <path d="M22 60 C22 40 40 22 60 22 C46 26 34 34 30 46 C40 44 50 48 52 56 C44 50 30 52 22 60Z" fill="currentColor" opacity=".9"/>
+    <circle cx="66" cy="18" r="3.4" fill="currentColor"/>
+    <circle cx="18" cy="66" r="3.4" fill="currentColor"/>
+  </svg>
+  <svg class="corner tr" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+    <path d="M4 96 V30 C4 16 16 4 30 4 H96" stroke="currentColor" stroke-width="2.5"/>
+    <path d="M14 96 V34 C14 23 23 14 34 14 H96" stroke="currentColor" stroke-width="1"/>
+    <path d="M22 60 C22 40 40 22 60 22 C46 26 34 34 30 46 C40 44 50 48 52 56 C44 50 30 52 22 60Z" fill="currentColor" opacity=".9"/>
+    <circle cx="66" cy="18" r="3.4" fill="currentColor"/>
+    <circle cx="18" cy="66" r="3.4" fill="currentColor"/>
+  </svg>
+  <svg class="corner bl" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+    <path d="M4 96 V30 C4 16 16 4 30 4 H96" stroke="currentColor" stroke-width="2.5"/>
+    <path d="M14 96 V34 C14 23 23 14 34 14 H96" stroke="currentColor" stroke-width="1"/>
+    <path d="M22 60 C22 40 40 22 60 22 C46 26 34 34 30 46 C40 44 50 48 52 56 C44 50 30 52 22 60Z" fill="currentColor" opacity=".9"/>
+    <circle cx="66" cy="18" r="3.4" fill="currentColor"/>
+    <circle cx="18" cy="66" r="3.4" fill="currentColor"/>
+  </svg>
+  <svg class="corner br" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+    <path d="M4 96 V30 C4 16 16 4 30 4 H96" stroke="currentColor" stroke-width="2.5"/>
+    <path d="M14 96 V34 C14 23 23 14 34 14 H96" stroke="currentColor" stroke-width="1"/>
+    <path d="M22 60 C22 40 40 22 60 22 C46 26 34 34 30 46 C40 44 50 48 52 56 C44 50 30 52 22 60Z" fill="currentColor" opacity=".9"/>
+    <circle cx="66" cy="18" r="3.4" fill="currentColor"/>
+    <circle cx="18" cy="66" r="3.4" fill="currentColor"/>
+  </svg>
+
+  <div class="inner">
+    <div class="masthead">
+      <div class="mast-text">
+        <h1 class="org">ದೇಶೀಯ ಭಾಷಾ ಹಿತರಕ್ಷಣಾ ವೇದಿಕೆ (ರಿ)
+          <small>ಬೆಂಗಳೂರು</small>
+        </h1>
+      </div>
+      <div class="logo-slot" id="logoSlot"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiE1NwnzH-xX3kewbTJQ-iNWZA3q1kkQTVIt6GdNbgc52GeOaPYBgjDgsVxSu2hGxZlwsPMec-vd3Dpe3wTDAYq5tyZH0JwdkstN2qsLvNOrh_yd_NBZW1Cb9pb7nPRjIWK6G8e0IiwA0obaty3ohDrS62CDOnmM1IDn-k6qGBWalOc3_XlVO0BtbPwYhfS/s320/photo_2026-09-19_16-40-16.jpg" alt="ಲೋಗೋ" crossorigin="anonymous"></div>
+    </div>
+
+    <div class="rule">
+      <svg width="34" height="26" viewBox="0 0 34 26" fill="none" aria-hidden="true">
+        <path d="M17 2 L21 10 L30 11 L23.5 17 L25.5 25 L17 21 L8.5 25 L10.5 17 L4 11 L13 10 Z" fill="currentColor"/>
+      </svg>
+    </div>
+
+    <h2 class="title">ಅಭಿನಂದನಾ ಪತ್ರ</h2>
+    <div class="title-under"></div>
+
+    <div class="datebar">ದಿನಾಂಕ: <span contenteditable="true" spellcheck="false">21-09-2026</span></div>
+
+    <div class="salute">ಶ್ರೀ / ಶ್ರೀಮತಿ
+      <span class="name-line" id="nameLine" contenteditable="true" spellcheck="false" data-placeholder="ವೇಣುಗೋಪಾಲ್"></span>,
+      <span class="desig-line" id="desigLine" contenteditable="true" spellcheck="false" data-placeholder="ಪದನಾಮ"></span>,
+      <span class="school-line" id="schoolLine" contenteditable="true" spellcheck="false" data-placeholder="ಶಾಲೆಯ ಹೆಸರು"></span>
+      ರವರಿಗೆ,
+    </div>
+
+    <p class="body-text">ದಿನಾಂಕ <b>21-09-2026</b> ರಂದು ಬೆಂಗಳೂರಿನ <b>ಫ್ರೀಡಂ ಪಾರ್ಕ್</b>‌ನಲ್ಲಿ ನಡೆದ <b>ತೃತೀಯ ಭಾಷೆಗಳ ಉಳಿವಿನ ಹೋರಾಟದ</b> ಬೃಹತ್ ರ‍್ಯಾಲಿಯಲ್ಲಿ ತಾವು ಸಕ್ರಿಯವಾಗಿ ಭಾಗವಹಿಸಿ, ನಮ್ಮ ನಾಡು-ನುಡಿಯ ರಕ್ಷಣೆಗೆ ಬೆಂಬಲ ಸೂಚಿಸಿರುತ್ತೀರಿ.</p>
+
+    <p class="body-text">ಮಾತೃಭಾಷೆ ಹಾಗೂ ದೇಶೀಯ ಭಾಷೆಗಳ ಉಳಿವಿಗಾಗಿ ತಾವು ನೀಡಿರುವ ಈ ಅಮೂಲ್ಯ ಸಹಕಾರ ಮತ್ತು ಸೇವೆಗೆ ದೇಶೀಯ ಭಾಷಾ ಹಿತರಕ್ಷಣಾ ವೇದಿಕೆ (ರಿ) ವತಿಯಿಂದ ನಾವು ನಿಮಗೆ ಹೃತ್ಪೂರ್ವಕ ಧನ್ಯವಾದಗಳನ್ನು ಹಾಗೂ ಅಭಿನಂದನೆಗಳನ್ನು ಸಲ್ಲಿಸುತ್ತೇವೆ.</p>
+
+    <div class="wish">ನುಡಿ ಉಳಿದರೆ ನಾಡು ಉಳಿಯುತ್ತದೆ</div>
+
+    <div class="sign">
+      <div class="from">ಅಭಿನಂದನೆಗಳೊಂದಿಗೆ,</div>
+      <div class="who">ಪದಾಧಿಕಾರಿಗಳು ಮತ್ತು ಸದಸ್ಯರು</div>
+      <div class="who">ದೇಶೀಯ ಭಾಷಾ ಹಿತರಕ್ಷಣಾ ವೇದಿಕೆ (ರಿ), ಬೆಂಗಳೂರು</div>
+    </div>
+  </div>
+
+  <div class="footstrip">.</div>
+</div>
+</div>
+
+<script>
+(function(){
+  var sheet=document.getElementById('sheet');
+  var stage=document.getElementById('stage');
+  var slot=document.getElementById('logoSlot');
+  var msg=document.getElementById('msg');
+  var nameLine=document.getElementById('nameLine');
+
+  function say(t){ msg.textContent=t||''; }
+
+  function fileName(ext){
+    var n=(nameLine.textContent||'').trim().replace(/\s+/g,'-');
+    return 'Abhinandana-Patra' + (n?('-'+n):'') + '.' + ext;
+  }
+
+  function snap(){
+    document.body.classList.add('capturing');
+    var prev=sheet.style.transform;
+    sheet.style.transform='none';
+    return html2canvas(sheet,{scale:2,backgroundColor:'#FDF8EC',useCORS:true,logging:false})
+      .then(function(c){
+        document.body.classList.remove('capturing');
+        sheet.style.transform=prev;
+        return c;
+      })
+      .catch(function(err){
+        document.body.classList.remove('capturing');
+        sheet.style.transform=prev;
+        say('ಡೌನ್‌ಲೋಡ್ ಆಗಲಿಲ್ಲ. ಲೋಗೋವನ್ನು ಫೈಲ್‌ನಿಂದ ಆಯ್ಕೆ ಮಾಡಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.');
+        throw err;
+      });
+  }
+
+  document.getElementById('dlPng').onclick=function(){
+    say('ಚಿತ್ರ ಸಿದ್ಧವಾಗುತ್ತಿದೆ...');
+    snap().then(function(c){
+      var a=document.createElement('a');
+      a.download=fileName('png'); a.href=c.toDataURL('image/png'); a.click();
+      say('PNG ಡೌನ್‌ಲೋಡ್ ಆಯಿತು.');
+    }).catch(function(){});
+  };
+
+  document.getElementById('dlPdf').onclick=function(){
+    say('PDF ಸಿದ್ಧವಾಗುತ್ತಿದೆ...');
+    snap().then(function(c){
+      var JsPDF=window.jspdf.jsPDF;
+      var pdf=new JsPDF({orientation:'portrait',unit:'mm',format:'a4'});
+      var pw=210, ph=297;
+      var iw=pw, ih=c.height*pw/c.width;
+      if(ih>ph){ ih=ph; iw=c.width*ph/c.height; }
+      pdf.addImage(c.toDataURL('image/jpeg',0.95),'JPEG',(pw-iw)/2,(ph-ih)/2,iw,ih);
+      pdf.save(fileName('pdf'));
+      say('PDF ಡೌನ್‌ಲೋಡ್ ಆಯಿತು.');
+    }).catch(function(){});
+  };
+
+  document.querySelectorAll('[contenteditable]').forEach(function(el){
+    el.addEventListener('paste',function(e){
+      e.preventDefault();
+      var t=(e.clipboardData||window.clipboardData).getData('text');
+      document.execCommand('insertText',false,t);
+    });
+    el.addEventListener('keydown',function(e){ if(e.key==='Enter') e.preventDefault(); });
+  });
+
+  function fit(){
+    var avail=stage.clientWidth;
+    var s=Math.min(1, avail/800);
+    sheet.style.transform = s<1 ? 'scale('+s+')' : 'none';
+    sheet.style.marginBottom = s<1 ? (-(1132*(1-s))+'px') : '0';
+  }
+  window.addEventListener('resize',fit);
+  fit();
+})();
+</script>
+</body>
+</html>
