@@ -1,8 +1,8 @@
-s<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="kn">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=1200, initial-scale=1.0">
 <title>ಅಭಿನಂದನಾ ಪತ್ರ — ದೇಶೀಯ ಭಾಷಾ ಹಿತರಕ್ಷಣಾ ವೇದಿಕೆ (ರಿ) ಬೆಂಗಳೂರು</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -61,7 +61,7 @@ s<!DOCTYPE html>
   }
   .btn:hover{filter:brightness(1.08)}
   .btn:focus-visible{outline:3px solid #6C9BD2;outline-offset:2px}
-  .note{width:100%;font-size:12.5px;opacity:.7;margin:2px 0 0}
+  .note{width:100%;font-size:12.5px;opacity:.7;margin:2px 0 0;color:#c0392b;font-weight:600;}
 
   .stage{display:flex;justify-content:center;max-width:100%}
   .sheet{
@@ -80,44 +80,45 @@ s<!DOCTYPE html>
   .corner.bl{bottom:22px;left:22px;transform:scaleY(-1)}
   .corner.br{bottom:22px;right:22px;transform:scale(-1,-1)}
 
-  .inner{position:relative;z-index:3;padding:44px 40px 34px}
+  .inner{position:relative;z-index:3;padding:44px 30px 34px}
 
-  .masthead{display:flex;align-items:flex-start;gap:20px}
-  .mast-text{flex:1 1 auto;min-width:0}
+  .masthead{display:flex;align-items:center;gap:15px;justify-content:space-between;padding-top:10px;}
+  .mast-text{flex:1 1 auto;min-width:0;text-align:center;padding-right:10px;}
   .org{
     font-family:"Baloo Tamma 2","Noto Serif Kannada",serif;font-weight:800;
-    font-size:33px;line-height:1.3;color:var(--maroon-dk);margin:0;
+    font-size:32px;line-height:1.3;color:var(--maroon-dk);margin:0;
+    white-space:nowrap;
   }
-  .org small{display:block;font-size:19px;font-weight:600;color:var(--leaf);margin-top:6px;letter-spacing:.4px}
+  .org-sub{
+    font-family:"Baloo Tamma 2","Noto Serif Kannada",serif;
+    display:block;font-size:22px;font-weight:700;color:var(--leaf);margin-top:6px;letter-spacing:.5px;
+  }
   .logo-slot{
-    flex:0 0 auto;width:150px;height:150px;border:3px solid var(--gold);
+    flex:0 0 auto;width:135px;height:135px;border:3px solid var(--gold);
     border-radius:50%;display:flex;align-items:center;justify-content:center;
     overflow:hidden;background:#FFFCF4;text-align:center;
     box-shadow:0 0 0 4px var(--paper), 0 2px 8px rgba(0,0,0,.18);
   }
   .logo-slot img{width:100%;height:100%;object-fit:contain;display:block}
-  .logo-slot span{font-size:12.5px;line-height:1.5;color:#9A8B72;padding:8px}
 
-  .rule{margin:22px 0 0;height:16px;position:relative}
+  .rule{margin:18px 0 0;height:16px;position:relative}
   .rule::before{content:"";position:absolute;left:0;right:0;top:7px;height:2px;
     background:linear-gradient(90deg,transparent,var(--gold) 12%,var(--maroon) 50%,var(--gold) 88%,transparent)}
   .rule svg{position:absolute;left:50%;top:-5px;transform:translateX(-50%);
     background:var(--paper);padding:0 10px;color:var(--maroon)}
 
-  .title{
-    text-align:center;margin:28px 0 8px;font-family:"Baloo Tamma 2","Noto Serif Kannada",serif;
-    font-weight:800;font-size:46px;color:var(--maroon);letter-spacing:1px;
-    text-shadow:0 1px 0 rgba(255,255,255,.85);
-  }
-  .title-under{width:190px;height:3px;margin:0 auto;background:var(--gold);position:relative}
+  .title-container{text-align:center;margin:24px 0 6px;}
+  .title-svg{width:360px;height:65px;display:inline-block;overflow:visible;}
+
+  .title-under{width:190px;height:3px;margin:0 auto 15px;background:var(--gold);position:relative}
   .title-under::before,.title-under::after{content:"";position:absolute;top:-2px;width:7px;height:7px;background:var(--maroon);transform:rotate(45deg)}
   .title-under::before{left:-13px}
   .title-under::after{right:-13px}
 
-  .datebar{margin:26px 0 0;text-align:right;font-size:17px;color:var(--leaf);font-weight:600}
+  .datebar{margin:22px 0 0;text-align:right;font-size:17px;color:var(--leaf);font-weight:600}
   .datebar [contenteditable]{border-bottom:1px dotted var(--gold);padding:0 4px}
 
-  .salute{margin:24px 0 0;font-size:19.5px}
+  .salute{margin:20px 0 0;font-size:19.5px}
   .name-line{display:inline-block;min-width:230px;border-bottom:2px dotted var(--maroon);
     padding:2px 10px;font-weight:700;font-size:22px;color:var(--maroon-dk);text-align:center}
   .name-line:empty::before{content:attr(data-placeholder);color:#B6A68C;font-weight:500}
@@ -133,15 +134,15 @@ s<!DOCTYPE html>
   .school-line:empty::before{content:attr(data-placeholder);color:#B6A68C;font-weight:500}
   .school-line:focus{background:#FFF3D6;border-radius:4px 4px 0 0}
 
-  .body-text{font-size:19px;line-height:2.05;text-align:justify;margin:20px 0 0;text-indent:34px}
+  .body-text{font-size:19px;line-height:2.05;text-align:justify;margin:18px 0 0;text-indent:34px}
   .body-text b{color:var(--maroon-dk);font-weight:700}
 
   .wish{
-    margin:32px auto 0;max-width:560px;text-align:center;font-size:20px;color:var(--leaf);
+    margin:28px auto 0;max-width:560px;text-align:center;font-size:20px;color:var(--leaf);
     font-weight:600;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);padding:12px 0;
   }
 
-  .sign{margin:48px 0 0;text-align:right;font-size:18px;line-height:1.9}
+  .sign{margin:42px 0 0;text-align:right;font-size:18px;line-height:1.9}
   .sign .from{font-weight:700;color:var(--maroon-dk);font-size:19px}
   .sign .who{font-size:17px}
 
@@ -203,11 +204,10 @@ s<!DOCTYPE html>
   <div class="inner">
     <div class="masthead">
       <div class="mast-text">
-        <h1 class="org">ದೇಶೀಯ ಭಾಷಾ ಹಿತರಕ್ಷಣಾ ವೇದಿಕೆ (ರಿ)
-          <small>ಬೆಂಗಳೂರು</small>
-        </h1>
+        <h1 class="org">ದೇಶೀಯ ಭಾಷಾ ಹಿತರಕ್ಷಣಾ ವೇದಿಕೆ (ರಿ)</h1>
+        <span class="org-sub">ಬೆಂಗಳೂರು</span>
       </div>
-      <div class="logo-slot" id="logoSlot"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiE1NwnzH-xX3kewbTJQ-iNWZA3q1kkQTVIt6GdNbgc52GeOaPYBgjDgsVxSu2hGxZlwsPMec-vd3Dpe3wTDAYq5tyZH0JwdkstN2qsLvNOrh_yd_NBZW1Cb9pb7nPRjIWK6G8e0IiwA0obaty3ohDrS62CDOnmM1IDn-k6qGBWalOc3_XlVO0BtbPwYhfS/s320/photo_2026-09-19_16-40-16.jpg" alt="ಲೋಗೋ" crossorigin="anonymous"></div>
+      <div class="logo-slot" id="logoSlot"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjUgwJoV-rw3fd4vJeb37sY_vP8nHX5EBOUQhPNwi5BpgMIVdqke-xcnnYG9Awtxu5NWLxZgHMv9gscoAJ4sGR6X09k4pkWjOfOkx1ye31G6uDGiST22OZo20wq2sJby6vyTH_92ff2djGbTcwpRCZdnbBOSiPshNwPa0SpKjgOEP-U1T8RN_X9saSvrXjL/s320/1006361762.jpg" alt="ಲೋಗೋ" crossorigin="anonymous"></div>
     </div>
 
     <div class="rule">
@@ -216,7 +216,11 @@ s<!DOCTYPE html>
       </svg>
     </div>
 
-    <h2 class="title">ಅಭಿನಂದನಾ ಪತ್ರ</h2>
+    <div class="title-container">
+      <svg class="title-svg" viewBox="0 0 360 55">
+        <text x="50%" y="40" text-anchor="middle" font-family="'Baloo Tamma 2', 'Noto Serif Kannada', sans-serif" font-weight="800" font-size="42" fill="#7C1220">ಅಭಿನಂದನಾ ಪತ್ರ</text>
+      </svg>
+    </div>
     <div class="title-under"></div>
 
     <div class="datebar">ದಿನಾಂಕ: <span contenteditable="true" spellcheck="false">21-09-2026</span></div>
@@ -249,7 +253,6 @@ s<!DOCTYPE html>
 (function(){
   var sheet=document.getElementById('sheet');
   var stage=document.getElementById('stage');
-  var slot=document.getElementById('logoSlot');
   var msg=document.getElementById('msg');
   var nameLine=document.getElementById('nameLine');
 
@@ -264,40 +267,62 @@ s<!DOCTYPE html>
     document.body.classList.add('capturing');
     var prev=sheet.style.transform;
     sheet.style.transform='none';
-    return html2canvas(sheet,{scale:2,backgroundColor:'#FDF8EC',useCORS:true,logging:false})
-      .then(function(c){
-        document.body.classList.remove('capturing');
-        sheet.style.transform=prev;
-        return c;
-      })
-      .catch(function(err){
-        document.body.classList.remove('capturing');
-        sheet.style.transform=prev;
-        say('ಡೌನ್‌ಲೋಡ್ ಆಗಲಿಲ್ಲ. ಲೋಗೋವನ್ನು ಫೈಲ್‌ನಿಂದ ಆಯ್ಕೆ ಮಾಡಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.');
-        throw err;
-      });
+    
+    return html2canvas(sheet, {
+      scale: 2,
+      backgroundColor: '#FDF8EC',
+      useCORS: true,
+      allowTaint: false,
+      logging: false
+    })
+    .then(function(c){
+      document.body.classList.remove('capturing');
+      sheet.style.transform=prev;
+      return c;
+    })
+    .catch(function(err){
+      document.body.classList.remove('capturing');
+      sheet.style.transform=prev;
+      say('ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಒಮ್ಮೆ ಪೇಜ್ ರಿಫ್ರೆಶ್ ಮಾಡಿ ಪ್ರಯತ್ನಿಸಿ.');
+      throw err;
+    });
   }
 
   document.getElementById('dlPng').onclick=function(){
     say('ಚಿತ್ರ ಸಿದ್ಧವಾಗುತ್ತಿದೆ...');
     snap().then(function(c){
-      var a=document.createElement('a');
-      a.download=fileName('png'); a.href=c.toDataURL('image/png'); a.click();
-      say('PNG ಡೌನ್‌ಲೋಡ್ ಆಯಿತು.');
+      try {
+        var dataUrl = c.toDataURL('image/png');
+        var a = document.createElement('a');
+        a.download = fileName('png');
+        a.href = dataUrl;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        say('PNG ಡೌನ್‌ಲೋಡ್ ಯಶಸ್ವಿಯಾಗಿದೆ!');
+      } catch(e) {
+        say('ಡೌನ್‌ಲೋಡ್ ದೋಷ: ಬ್ರೌಸರ್ ಸೆಟ್ಟಿಂಗ್ ಪರಿಶೀಲಿಸಿ.');
+      }
     }).catch(function(){});
   };
 
   document.getElementById('dlPdf').onclick=function(){
     say('PDF ಸಿದ್ಧವಾಗುತ್ತಿದೆ...');
     snap().then(function(c){
-      var JsPDF=window.jspdf.jsPDF;
-      var pdf=new JsPDF({orientation:'portrait',unit:'mm',format:'a4'});
-      var pw=210, ph=297;
-      var iw=pw, ih=c.height*pw/c.width;
-      if(ih>ph){ ih=ph; iw=c.width*ph/c.height; }
-      pdf.addImage(c.toDataURL('image/jpeg',0.95),'JPEG',(pw-iw)/2,(ph-ih)/2,iw,ih);
-      pdf.save(fileName('pdf'));
-      say('PDF ಡೌನ್‌ಲೋಡ್ ಆಯಿತು.');
+      try {
+        var { jsPDF } = window.jspdf;
+        var pdf = new jsPDF({orientation: 'portrait', unit: 'mm', format: 'a4'});
+        var pw = 210, ph = 297;
+        var iw = pw, ih = c.height * pw / c.width;
+        if(ih > ph){ ih = ph; iw = c.width * ph / c.height; }
+        
+        var imgData = c.toDataURL('image/jpeg', 0.95);
+        pdf.addImage(imgData, 'JPEG', (pw - iw) / 2, (ph - ih) / 2, iw, ih);
+        pdf.save(fileName('pdf'));
+        say('PDF ಡೌನ್‌ಲೋಡ್ ಯಶಸ್ವಿಯಾಗಿದೆ!');
+      } catch(e) {
+        say('PDF ಡೌನ್‌ಲೋಡ್ ದೋಷ ಉಂಟಾಗಿದೆ.');
+      }
     }).catch(function(){});
   };
 
@@ -322,23 +347,3 @@ s<!DOCTYPE html>
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<head>
-    <meta charset="UTF-8">
-    <!-- ಇದು ಮೊಬೈಲ್‌ನಲ್ಲಿಯೂ ಡೆಸ್ಕ್‌ಟಾಪ್ ವ್ಯೂ ಬರುವುದನ್ನು ಖಚಿತಪಡಿಸುತ್ತದೆ -->
-    <meta name="viewport" content="width=1200, initial-scale=1.0">
-    <title>ನಿಮ್ಮ ಪೇಜ್ ಶೀರ್ಷಿಕೆ</title>
-</head>
